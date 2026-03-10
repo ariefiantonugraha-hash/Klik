@@ -1,0 +1,471 @@
+.arithmetic-page {
+  min-height: 100vh;
+}
+
+.arithmetic-page nav {
+  align-items: center;
+  min-height: 5rem;
+}
+
+.arithmetic-page .brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.42rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.arithmetic-nav-actions {
+  margin-left: auto;
+  flex-wrap: nowrap;
+}
+
+.arithmetic-nav-actions .language-switcher {
+  width: auto;
+  flex-wrap: nowrap;
+}
+
+.arithmetic-main {
+  width: min(1240px, calc(100% - (var(--page-gutter) * 2)));
+  margin: 0 auto;
+  padding: 0.85rem 0 4rem;
+}
+
+.arithmetic-shell {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.arithmetic-stage[hidden] {
+  display: none;
+}
+
+.arithmetic-stage.is-active,
+.arithmetic-stage:not([hidden]) {
+  display: block;
+}
+
+.arithmetic-stage-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.arithmetic-hero-copy {
+  max-width: 35rem;
+  padding: 0.6rem 0 0;
+}
+
+.arithmetic-title,
+.arithmetic-stage-title,
+.problem-prompt {
+  margin: 0;
+  color: transparent;
+  background: var(--heading-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.055em;
+}
+
+.arithmetic-title {
+  max-width: 12.6ch;
+  font-size: clamp(2rem, 4vw, 3.35rem);
+  line-height: 0.95;
+}
+
+html[lang="id"] .arithmetic-title {
+  max-width: 12ch;
+  font-size: clamp(1.75rem, 3.2vw, 2.75rem);
+  line-height: 0.96;
+}
+
+.arithmetic-intro,
+.arithmetic-stage-copy,
+.test-helper,
+.result-note p {
+  max-width: 34rem;
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
+.arithmetic-intro {
+  margin: 1rem 0 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.arithmetic-points {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
+  padding: 0;
+  margin: 1rem 0 0;
+  list-style: none;
+}
+
+.arithmetic-points li {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding: 0.7rem 0.85rem 0.7rem 1.6rem;
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(216, 208, 196, 0.76);
+  border-radius: 18px;
+  color: var(--heading-soft);
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.arithmetic-points li::before {
+  content: "";
+  position: absolute;
+  top: 1.02rem;
+  left: 0.85rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1f7769 0%, #49bcad 100%);
+}
+
+.arithmetic-preview-card,
+.arithmetic-age-card,
+.ready-summary-card,
+.test-problem-card,
+.result-metric-card,
+.result-panel {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(216, 208, 196, 0.9);
+  border-radius: 24px;
+}
+
+.arithmetic-preview-card {
+  align-self: start;
+  margin-top: 2.1rem;
+  padding: 1.2rem 1.25rem;
+  background:
+    linear-gradient(155deg, rgba(255, 255, 255, 0.86), rgba(248, 244, 236, 0.88)),
+    rgba(255, 255, 255, 0.84);
+  box-shadow: 0 20px 44px rgba(31, 42, 42, 0.08);
+}
+
+.preview-label {
+  margin: 0 0 0.8rem;
+  color: var(--accent-strong);
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.preview-items {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.preview-item {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.preview-item strong {
+  color: var(--heading);
+  font-size: 0.96rem;
+}
+
+.preview-item span {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.arithmetic-age-card {
+  display: grid;
+  gap: 0.8rem;
+  max-width: 54rem;
+  margin-top: 1.4rem;
+  padding: 1.15rem 1.2rem;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(246, 241, 232, 0.92)),
+    rgba(255, 255, 255, 0.88);
+  box-shadow: 0 20px 42px rgba(31, 42, 42, 0.07);
+}
+
+.age-label {
+  color: var(--heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.age-input-row {
+  display: flex;
+  align-items: stretch;
+  gap: 0.85rem;
+}
+
+.age-input-row input,
+.answer-form input {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(206, 196, 180, 0.95);
+  border-radius: 18px;
+  background: rgba(255, 253, 248, 0.96);
+  color: var(--heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.age-input-row input:focus-visible,
+.answer-form input:focus-visible {
+  outline: 2px solid rgba(31, 122, 110, 0.2);
+  border-color: rgba(31, 122, 110, 0.7);
+}
+
+.age-hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.age-hint.is-error {
+  color: #a54545;
+}
+
+#introStage {
+  position: relative;
+  padding: 0.35rem 0 0.8rem;
+}
+
+#introStage::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: min(52rem, 78%);
+  height: min(26rem, 100%);
+  background: radial-gradient(circle at 18% 16%, rgba(143, 191, 183, 0.18), transparent 55%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.ready-summary-grid,
+.result-metrics-grid,
+.result-interpretation-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.ready-summary-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ready-summary-card,
+.result-metric-card {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1.15rem 1.1rem;
+}
+
+.ready-summary-card strong,
+.result-metric-card strong {
+  color: var(--heading);
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+  font-weight: 800;
+}
+
+.arithmetic-stage-title {
+  max-width: 14ch;
+  font-size: clamp(1.9rem, 3vw, 3rem);
+  line-height: 1;
+  margin-bottom: 0.8rem;
+}
+
+.arithmetic-stage-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-top: 1.3rem;
+}
+
+.test-topbar {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.test-chip {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.95rem 1rem;
+  background: rgba(24, 76, 70, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.test-chip-label {
+  color: rgba(226, 240, 237, 0.8);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.test-chip strong {
+  font-size: 1.25rem;
+}
+
+.test-problem-card {
+  padding: 1.6rem;
+}
+
+.test-status-line {
+  margin: 0 0 1rem;
+  color: var(--accent-strong);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.problem-prompt {
+  font-size: clamp(2.9rem, 9vw, 6rem);
+  line-height: 0.92;
+  margin-bottom: 1.5rem;
+}
+
+.answer-form {
+  display: flex;
+  align-items: stretch;
+  gap: 0.85rem;
+}
+
+.answer-form input {
+  text-align: center;
+  font-size: clamp(1.4rem, 3vw, 2.1rem);
+}
+
+.result-metrics-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 1rem;
+}
+
+.result-interpretation-grid {
+  grid-template-columns: 1.25fr 1fr;
+  margin-bottom: 1rem;
+}
+
+.result-panel {
+  padding: 1.3rem;
+}
+
+.result-panel h3 {
+  margin: 0.25rem 0 0.45rem;
+  color: var(--heading);
+  font-size: 1.5rem;
+}
+
+.result-panel p:last-child {
+  margin-bottom: 0;
+}
+
+.result-note {
+  padding-top: 0.2rem;
+}
+
+@media (max-width: 980px) {
+  .arithmetic-stage-grid,
+  .result-interpretation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .test-topbar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .arithmetic-nav-links {
+    display: none;
+  }
+
+  .arithmetic-nav-actions {
+    display: flex;
+  }
+
+  .arithmetic-main {
+    width: min(1240px, calc(100% - 1.2rem));
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+  .arithmetic-title {
+    max-width: 11.2ch;
+    font-size: clamp(1.95rem, 10.5vw, 2.75rem);
+  }
+
+  html[lang="id"] .arithmetic-title {
+    max-width: 11ch;
+    font-size: clamp(1.55rem, 8.1vw, 2.1rem);
+    line-height: 0.98;
+  }
+
+  .arithmetic-stage-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .arithmetic-preview-card {
+    display: none;
+  }
+
+  .arithmetic-points {
+    grid-template-columns: 1fr;
+  }
+
+  .arithmetic-age-card {
+    max-width: 100%;
+    margin-top: 1.1rem;
+    padding: 1rem;
+  }
+
+  .age-input-row,
+  .answer-form,
+  .arithmetic-stage-actions {
+    flex-direction: column;
+  }
+
+  .ready-summary-grid,
+  .result-metrics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .problem-prompt {
+    font-size: clamp(3.1rem, 17vw, 4.4rem);
+    text-align: center;
+  }
+
+  .test-problem-card {
+    padding: 1.25rem 1rem 1.15rem;
+  }
+
+  .answer-form input {
+    min-height: 4rem;
+  }
+
+  .answer-form .button-primary,
+  .arithmetic-stage-actions .button-primary,
+  .arithmetic-stage-actions .button-secondary {
+    width: 100%;
+  }
+}

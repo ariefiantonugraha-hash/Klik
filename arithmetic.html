@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Take a 1-minute arithmetic fluency prescreening for ages 6 to 17."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="arithmetic.css" />
+  <title>Klik | Arithmetic Fluency Snapshot</title>
+</head>
+<body class="arithmetic-page">
+  <header>
+    <nav aria-label="Arithmetic navigation">
+      <a href="index.html" class="brand-mark">KLIK</a>
+      <div class="nav-actions arithmetic-nav-actions">
+        <div class="language-switcher" aria-label="Language switcher">
+          <button
+            type="button"
+            class="language-trigger"
+            data-language-trigger
+            aria-expanded="false"
+            aria-haspopup="true"
+            aria-label="Change language"
+          >
+            <span class="language-trigger-icon" aria-hidden="true"></span>
+            <span class="language-current" data-language-current>EN</span>
+          </button>
+          <div class="language-menu" role="menu" aria-label="Language options">
+            <button
+              type="button"
+              class="language-button is-active"
+              data-language="en"
+              role="menuitemradio"
+              aria-checked="true"
+              aria-label="Switch to English"
+            >
+              English
+            </button>
+            <button
+              type="button"
+              class="language-button"
+              data-language="id"
+              role="menuitemradio"
+              aria-checked="false"
+              aria-label="Switch to Bahasa Indonesia"
+            >
+              Bahasa Indonesia
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="arithmetic-main">
+    <section class="arithmetic-shell">
+      <section class="arithmetic-stage is-active" id="introStage" aria-labelledby="introTitle">
+        <div class="arithmetic-stage-grid">
+          <div class="arithmetic-hero-copy">
+            <p class="section-kicker" id="introKicker">Arithmetic fluency snapshot</p>
+            <h1 class="arithmetic-title" id="introTitle">A 1-minute prescreening for quick numeracy fluency.</h1>
+            <p class="arithmetic-intro" id="introCopy">
+              This early snapshot looks at how easily a child or teen handles basic arithmetic under short time pressure.
+              It is designed as a prescreening tool, not a diagnosis.
+            </p>
+            <ul class="arithmetic-points">
+              <li id="introPoint1">Age range: 6 to 17</li>
+              <li id="introPoint2">One answer at a time</li>
+              <li id="introPoint3">60 seconds total</li>
+              <li id="introPoint4">Score reflects both speed and accuracy</li>
+            </ul>
+          </div>
+
+          <aside class="arithmetic-preview-card" aria-label="Assessment preview">
+            <p class="preview-label" id="previewLabel">What the result will show</p>
+            <div class="preview-items">
+              <div class="preview-item">
+                <strong id="previewItem1Title">Correct answers</strong>
+                <span id="previewItem1Copy">How many problems were answered correctly in 1 minute</span>
+              </div>
+              <div class="preview-item">
+                <strong id="previewItem2Title">Accuracy</strong>
+                <span id="previewItem2Copy">How carefully the answers matched the correct result</span>
+              </div>
+              <div class="preview-item">
+                <strong id="previewItem3Title">Difficulty reached</strong>
+                <span id="previewItem3Copy">The highest stable arithmetic level reached during the test</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <form class="arithmetic-age-card" id="ageForm">
+          <label class="age-label" for="ageInput" id="ageLabel">Enter age</label>
+          <div class="age-input-row">
+            <input
+              id="ageInput"
+              name="age"
+              type="number"
+              min="6"
+              max="17"
+              inputmode="numeric"
+              placeholder="6 - 17"
+              autocomplete="off"
+              required
+            />
+            <button type="submit" class="button-primary" id="ageContinueButton">Continue</button>
+          </div>
+          <p class="age-hint" id="ageHint">This version is currently designed for ages 6 to 17.</p>
+        </form>
+      </section>
+
+      <section class="arithmetic-stage" id="readyStage" aria-labelledby="readyTitle" hidden>
+        <p class="section-kicker" id="readyKicker">Ready to begin</p>
+        <h2 class="arithmetic-stage-title" id="readyTitle">You will answer as many arithmetic questions as you can in 60 seconds.</h2>
+        <div class="ready-summary-grid">
+          <article class="ready-summary-card">
+            <span class="pill-label" id="readyAgeLabel">Age</span>
+            <strong id="readyAgeValue">10</strong>
+          </article>
+          <article class="ready-summary-card">
+            <span class="pill-label" id="readyInputLabel">Input</span>
+            <strong id="readyInputValue">Numbers only</strong>
+          </article>
+          <article class="ready-summary-card">
+            <span class="pill-label" id="readyTimeLabel">Time</span>
+            <strong id="readyTimeValue">60 seconds</strong>
+          </article>
+        </div>
+        <p class="arithmetic-stage-copy" id="readyCopy">
+          Work at a steady pace. Try to answer accurately, but keep moving. If learning concerns are significant,
+          use this only as an early snapshot and consider a fuller evaluation later.
+        </p>
+        <div class="arithmetic-stage-actions">
+          <button type="button" class="button-secondary" id="backToIntro">Back</button>
+          <button type="button" class="button-primary" id="startTestButton">Start 1-minute test</button>
+        </div>
+      </section>
+
+      <section class="arithmetic-stage arithmetic-test-stage" id="testStage" aria-labelledby="problemPrompt" hidden>
+        <div class="test-topbar">
+          <div class="test-chip">
+            <span class="test-chip-label" id="timeLabel">Time</span>
+            <strong id="timeValue">01:00</strong>
+          </div>
+          <div class="test-chip">
+            <span class="test-chip-label" id="correctLabel">Correct</span>
+            <strong id="correctValue">0</strong>
+          </div>
+          <div class="test-chip">
+            <span class="test-chip-label" id="attemptedLabel">Attempted</span>
+            <strong id="attemptedValue">0</strong>
+          </div>
+          <div class="test-chip">
+            <span class="test-chip-label" id="levelLabel">Level</span>
+            <strong id="levelValue">1</strong>
+          </div>
+        </div>
+
+        <div class="test-problem-card">
+          <p class="test-status-line" id="testStatusLine">Age 10 • Band 9-11 • 60 seconds</p>
+          <h2 class="problem-prompt" id="problemPrompt">12 + 7</h2>
+
+          <form class="answer-form" id="answerForm">
+            <label class="sr-only" for="answerInput">Answer</label>
+            <input
+              id="answerInput"
+              type="number"
+              inputmode="numeric"
+              autocomplete="off"
+              placeholder="Type answer"
+              enterkeyhint="done"
+            />
+            <button type="submit" class="button-primary" id="submitAnswerButton">Submit</button>
+          </form>
+
+          <p class="test-helper" id="testHelper">
+            Use the number keyboard. Press Enter or tap Submit to move to the next question.
+          </p>
+        </div>
+      </section>
+
+      <section class="arithmetic-stage" id="resultStage" aria-labelledby="resultTitle" hidden>
+        <p class="section-kicker" id="resultKicker">Result snapshot</p>
+        <h2 class="arithmetic-stage-title" id="resultTitle">A first look at current arithmetic fluency.</h2>
+        <p class="arithmetic-stage-copy" id="resultSummary">
+          This result reflects a short speeded numeracy prescreening. It should be used as an early snapshot, not a diagnosis.
+        </p>
+
+        <div class="result-metrics-grid">
+          <article class="result-metric-card">
+            <span class="pill-label" id="resultCorrectLabel">Correct</span>
+            <strong id="resultCorrect">0</strong>
+          </article>
+          <article class="result-metric-card">
+            <span class="pill-label" id="resultAttemptedLabel">Attempted</span>
+            <strong id="resultAttempted">0</strong>
+          </article>
+          <article class="result-metric-card">
+            <span class="pill-label" id="resultAccuracyLabel">Accuracy</span>
+            <strong id="resultAccuracy">0%</strong>
+          </article>
+          <article class="result-metric-card">
+            <span class="pill-label" id="resultLevelLabel">Highest level</span>
+            <strong id="resultLevel">1</strong>
+          </article>
+        </div>
+
+        <div class="result-interpretation-grid">
+          <article class="result-panel">
+            <p class="pill-label" id="resultInterpretationLabel">Interpretation</p>
+            <h3 id="resultBandLabel">Building fluency</h3>
+            <p id="resultInterpretation">
+              The current result suggests arithmetic fluency is still building for this age range.
+            </p>
+          </article>
+          <article class="result-panel">
+            <p class="pill-label" id="resultNextLabel">Next step</p>
+            <p id="resultNextStep">
+              Focus on short, accurate daily practice before increasing speed demand.
+            </p>
+          </article>
+        </div>
+
+        <div class="result-note">
+          <p id="resultReferralNote">
+            If daily numeracy feels consistently difficult, or if you want a deeper learning picture, consider consulting
+            a psychologist, educational psychologist, or learning specialist near your location.
+          </p>
+        </div>
+
+        <div class="arithmetic-stage-actions">
+          <button type="button" class="button-secondary" id="retryButton">Try again</button>
+          <a href="index.html" class="button-primary" id="resultHomeButton">Back home</a>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="arithmetic.js"></script>
+</body>
+</html>
